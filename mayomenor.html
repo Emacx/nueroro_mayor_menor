@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>maiorymenore</title>
+
+       <link href="mayormenor.css" rel="stylesheet"> 
+
+  </head>
+  <body>
+
+    <ul id="botones"> <h3>Los numeros que apraecen son al asar, si el numero es...</h3> <br> <h1 id="numero">numero random</h1><br><h2>El numero que le sigue es mas grande o chico??</h2><br>
+    <button id="botonmayor" type="button" name="button">Es mayor</button>
+    <button id="botonmenor" type="button" name="button">Es menor</button>
+  </ul>
+    <h1 id= "textorespuesta">          
+    </h1>  
+    
+     <script type="text/javascript">
+      var primernumero = document.getElementById("numero").innerHTML;
+
+      function numerorandom(){
+        numeronuevo = document.getElementById("numero").innerHTML;
+        numeronuevo = Math.floor(Math.random()*100);
+        document.getElementById("numero").innerHTML= numeronuevo;
+        return numeronuevo;
+      }
+      function esmayorelnumer()
+      { primernumero = document.getElementById("numero").innerHTML;
+        numerorandom();
+        if (primernumero < numeronuevo) {
+            console.log("aca entra");
+              document.getElementById("textorespuesta").innerHTML = "le pegaste kpo";
+        }else if(primernumero > numeronuevo){
+          console.log("aca tambien");
+          document.getElementById("textorespuesta").innerHTML = "fallaste, vuelve a intentarlo";
+        }
+      }
+        function esmenorelnumer()
+      { primernumero = document.getElementById("numero").innerHTML;
+        numerorandom();
+        if (primernumero > numeronuevo) {
+            console.log("aca entra");
+              document.getElementById("textorespuesta").innerHTML = "le pegaste kpo";
+        }else if(primernumero < numeronuevo){
+          console.log("aca tambien");
+          document.getElementById("textorespuesta").innerHTML = "fallaste, vuelve a intentarlo";
+        }
+
+      }
+      
+
+    </script>
+
+
+    <script type="text/javascript">
+      document.getElementById("numero").innerHTML=  Math.floor(Math.random() * 100);
+      document.getElementById("botonmayor").addEventListener("click", esmayorelnumer);
+      document.getElementById("numero").innerHTML=  Math.floor(Math.random() * 100);
+      document.getElementById("botonmenor").addEventListener("click", esmenorelnumer);
+
+
+    </script>
+    
+
+
+
+  </body>
+</html>
